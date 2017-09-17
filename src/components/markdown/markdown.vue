@@ -2,31 +2,12 @@
   <div class="demo-wrap">
     <div class="editor-wrap">
       <div class="editor">
-        <h4 class="title">默认配置&禁用自动初始化</h4>
-        <markdown-editor
-          v-model="content"
-          ref="markdownEditor"
-          :autoinit="false"></markdown-editor>
-      </div>
-      <div class="editor">
         <h4 class="title">开启代码高亮&使用github的markdown样式</h4>
         <markdown-editor
           v-model="content"
           :highlight="true"
-          preview-class="markdown-body"></markdown-editor>
-      </div>
-      <div class="editor theme">
-        <h4 class="title">自定义代码高亮主题</h4>
-        <markdown-editor
-          v-model="content"
-          :highlight="true"
-          preview-class="markdown-body"></markdown-editor>
-      </div>
-      <div class="editor">
-        <h4 class="title">隐藏底部统计栏&修改工具栏</h4>
-        <markdown-editor
-          v-model="content"
-          :configs="configs"></markdown-editor>
+          preview-class="markdown-body"
+          ref="markdownEditor"></markdown-editor>
       </div>
     </div>
     <div class="button-wrap">
@@ -64,11 +45,6 @@
         return this.$refs.markdownEditor.simplemde
       }
     },
-    mounted() {
-      this.$nextTick(() => {
-        this.$refs.markdownEditor.initialize()
-      })
-    },
     methods: {
       handleInput(val) {
         this.output = val
@@ -90,20 +66,15 @@
   @import '~highlight.js/styles/atom-one-dark.css';
   @import '~github-markdown-css';
 
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
   .button-wrap {
     padding: 20px;
   }
 
   .editor-wrap {
     width: 100%;
-    max-width: 900px;
     padding: 0 10px;
     float: left;
+    color: #000;
   }
 
   .editor {
