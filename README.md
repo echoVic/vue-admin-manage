@@ -1,3 +1,5 @@
+**demo**: [https://echovic.github.io/vue-admin-manage/dist](https://echovic.github.io/vue-admin-manage/dist)
+
 # admin-manage
 
 > a management system 
